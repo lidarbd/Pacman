@@ -1,0 +1,54 @@
+Results file format:
+
+if pacman dies/lost - Point of time that the pacman died:(timePoint)
+if pacman passed a screen/won - Point of time that the pacman won: (timePoint)
+
+(timePoint) would be pacmansSteps. Each action apears in a new line.
+For example:
+Point of time that the pacman died: 100
+Point of time that the pacman died: 200
+Point of time that the pacman won: 210
+----------------------------------------------
+
+Steps file format:
+
+In the first line, the file contains 1 for game with colors or 0 without colors.
+Each line in the file format represents the updates of one creature in the following format:
+2 lines of pacman movement.
+One line of the fruit movement.
+Lines (depends on the number of the ghosts) of ghosts movement.
+
+Pacman (Direction)
+Ghost (index) (Direction)
+Fruit apperance (coordinate) value: (fruit value between 5-9) (Direction)
+Fruit disapperance (Direction)
+Fruit (Direction)
+
+(Direction) could be:
+0 for UP
+1 for DOWN
+2 for LEFT
+3 for RIGHT
+4 for STAY
+
+(coordinate) could be - 
+int x int y
+for example: 13 40
+
+(index) could be :(depends on how many ghosts are on the screen)
+0
+1
+2
+3
+
+An Example:
+Fruit appearance 7 2 value: 7 3
+Ghost 0 2
+Pacman 3
+Pacman 3
+Fruit 0
+Ghost 0 3
+Pacman 2
+Pacman 2
+Fruit disappearance 3
+
